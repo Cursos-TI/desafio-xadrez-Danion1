@@ -2,7 +2,7 @@
 
 int main(){
   int torre, bispo, rainha; //variavéis de controle
-
+  int movimentocompleto = 1;
 
   //lógica de movimentação da torre
   printf("A torre pode se mover tanto na horizontal quanto na vertical\n");
@@ -30,6 +30,19 @@ int main(){
   for (rainha = 1; rainha <= 8; rainha++){
     printf("A rainha se moveu para a esquerda\n");
   }
+
+  //lógica de movimentação do cavalo
+  printf("O Cavalo pode se mover em L\n");
+
+ while(movimentocompleto--)
+{
+  for (int i = 0; i < 2; i++)
+  {
+    printf("O cavalo se moveu para para baixo\n");
+  }
+
+  printf("O cavalo se moveu para para esquerda\n");
+}
 
   return 0;
 }    
