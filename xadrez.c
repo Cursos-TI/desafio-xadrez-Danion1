@@ -1,48 +1,56 @@
 #include <stdio.h>
+//funções recursivas para a torre, rainha e bispo
+void movertorre(int casas){
+    if (casas > 0){
+        printf("A torre se moveu para a direita\n");
+        movertorre(casas - 1);
+    }
+  }
+
+void moverrainha(int casas){
+    if (casas > 0){
+        printf("A rainha se moveu para a esquerda\n");
+        moverrainha(casas - 1);
+    }
+}
+
+void moverbispo(int casas){
+    if(casas > 0){
+        printf("O bispo se moveu para cima,direita\n");
+        moverbispo(casas - 1);
+    }
+}
 
 int main(){
-  int torre, bispo, rainha; //variavéis de controle
-  int movimentocompleto = 1;
+    int movimentocompleto = 1;
+    
+    //movimento da torre
+    printf("A torre pode se mover tanto na horizontal quanto na vertical\n");
+    printf("A torre moverá 5 casas para a direita\n");
+    movertorre(5);
 
-  //lógica de movimentação da torre
-  printf("A torre pode se mover tanto na horizontal quanto na vertical\n");
-  printf("A torre moverá 5 casas para a direita\n");
+    //movimento da rainha
+    printf("A rainha pode se mover para todas as direções\n");
+    printf("A rainha moverá 8 casas para a esquerda\n");
+    moverrainha(8);
 
-  //Loop for para 5 movimentos da torre 
-  for (torre = 1; torre <= 5; torre++){
-    printf("A torre se moveu para a direita\n");
-  }
+    //movmento do bispo 
+    printf("O bispo pode se mover na diagonal\n");
+    printf("O bispo moverá 5 casas para a diagonal\n");
+    moverbispo(5);
 
-  //lógica de movimentação do bispo
-  printf("O bispo pode se mover na diagonal\n");
-  printf("O bispo moverá 5 casas para a diagonal\n");
-
-  //Loop for para 5 movimentos do bispo
-  for (bispo = 1; bispo <= 5; bispo++){
-    printf("O bispo se moveu para cima,direita\n");
-  }
-
-  //lógica de movimentação da rainha
-  printf("A rainha pode se mover para todas as direções\n");
-  printf("A rainha moverá 8 casas para a esquerda\n");
-
-  //Loop for para 8 movimentos da rainha
-  for (rainha = 1; rainha <= 8; rainha++){
-    printf("A rainha se moveu para a esquerda\n");
-  }
-
-  //lógica de movimentação do cavalo
-  printf("O Cavalo pode se mover em L\n");
-
- while(movimentocompleto--)
+    //movimento do cavalo em L
+    //o cavalo pode se mover em L no tabuleiro
+    while(movimentocompleto--)
 {
   for (int i = 0; i < 2; i++)
   {
     printf("O cavalo se moveu para para baixo\n");
   }
 
-  printf("O cavalo se moveu para para esquerda\n");
+    printf("O cavalo se moveu para para esquerda\n");
 }
 
+    
   return 0;
 }    
